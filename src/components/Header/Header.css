@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  background-color: aliceblue;
+  padding: 10px 10px 0px 10px;
+  border-bottom: 1px solid gray;
+}
+.header button {
+  float: right;
+  background-color: red;
+  cursor: pointer;
+}
+.header h5 {
+  color: blue;
+  font-weight: 100;
+  text-align: left;
+}
+
+.header h5 strong {
+  font-weight: bolder;
+}
+
+.issue {
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  border-top: 3px solid red;
+  border-left: 1px dotted black;
+  border-right: 1px dotted black;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 2px 2px 2px 0px rgba(255, 255, 255, 1);
+}
+
+.exclamation {
+  color: blue;
+}
+
+.val {
+  background-color: whitesmoke;
+  border-radius: 40%;
+  width: 20px;
+  font-weight: bold;
+  font-size: 0.8em;
+}

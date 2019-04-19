@@ -1,0 +1,17 @@
+.err {
+    text-align: center;
+    color: red;
+    margin: 20px auto;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    width: 60vw;
+}
+
+.loader {
+    background-image: url('../../assets/err.png');
+    background-size: 300px 300px;
+    height: 300px;
+    width: 300px;
+    margin: 10px auto;
+}
