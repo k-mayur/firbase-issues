@@ -10,15 +10,6 @@ import * as actionCreators from "../../store/actions/index";
 import { Redirect, withRouter } from "react-router-dom";
 
 class IssuesGit extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false
-    };
-    this.url =
-      "https://api.github.com/repos/freeCodeCamp/freeCodeCamp/issues?page=";
-  }
-
   componentDidMount() {
     if (sessionStorage.getItem("isUser")) {
       this.props.loadIssues(this.props.match.params.page);

@@ -1,4 +1,5 @@
 export const LOAD_ISSUES = "LOAD_ISSUES";
+export const LOAD_ISSUE = "LOAD_ISSUE";
 export const ERROR = "ERROR";
 export const LOAD_COUNT = "LOAD_COUNT";
 export const SORT = "SORT";
@@ -7,3 +8,5 @@ export const STATE = "STATE";
 export const LABEL = "LABEL";
 export const AUTHOR = "AUTHOR";
 export const SEARCH = "SEARCH";
+export const CHECK = "CHECK";
+export const LABEL_DELETE = "LABEL_DELETE";

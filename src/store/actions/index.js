@@ -9,3 +9,5 @@ export {
   authorHandler,
   searchHandler
 } from "./issues";
+
+export { loadIssueFromServer, handleChange, deleteLabelHandler } from "./issue";

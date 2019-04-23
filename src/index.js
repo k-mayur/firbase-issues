@@ -4,13 +4,15 @@ import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import thunk from "redux-thunk";
+import issueReducer from "./store/reducers/issue";
 import issuesReducer from "./store/reducers/issues";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import * as serviceWorker from "./serviceWorker";
 
 const rootReducer = combineReducers({
-  issues: issuesReducer
+  issues: issuesReducer,
+  issue: issueReducer
 });
 
 const logger = store => {
