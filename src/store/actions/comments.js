@@ -31,9 +31,6 @@ export const deleteComment = id => {
 
 export const addCommentToServer = (val, id) => {
   return (dispatch, getState) => {
-    const oldState = getState().issue.issue;
-    console.log(oldState);
-
     $.ajax({
       url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}/comments`,
       data: JSON.stringify({ body: val }),
@@ -61,9 +58,6 @@ export const addCommentToServer = (val, id) => {
 
 export const deleteCommentFromServer = id => {
   return (dispatch, getState) => {
-    const oldState = getState().issue.issue;
-    console.log(oldState);
-
     $.ajax({
       url: `https://api.github.com/repos/amrithakrishnan/website/issues/comments/${id}`,
       type: "DELETE",
@@ -89,9 +83,6 @@ export const deleteCommentFromServer = id => {
 
 export const loadCommentsFromServer = id => {
   return (dispatch, getState) => {
-    const oldState = getState().issue.issue;
-    console.log(oldState);
-
     $.ajax({
       url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}/comments`,
       dataType: "json",

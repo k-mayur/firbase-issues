@@ -23,8 +23,8 @@ class Home extends Component {
     this.state = {
       page: 1,
       isSignedIn: false,
-      token: null,
-      err: null
+      err: null,
+      loading: false
     };
   }
 
@@ -52,7 +52,7 @@ class Home extends Component {
         sessionStorage.setItem("token", res.credential.accessToken);
         sessionStorage.setItem("isUser", true);
         sessionStorage.setItem("username", res.additionalUserInfo.username);
-        this.setState({ isSignedIn: true, token: res.credential.accessToken });
+        this.setState({ isSignedIn: true });
       })
       .catch(err => {
         console.error(err.toString());

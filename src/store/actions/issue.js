@@ -31,9 +31,6 @@ export const errorPage = err => {
 
 export const loadIssueFromServer = id => {
   return (dispatch, getState) => {
-    const oldState = getState().issue.issue;
-    console.log(oldState);
-
     $.ajax({
       url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}`,
       dataType: "json",

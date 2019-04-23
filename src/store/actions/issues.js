@@ -59,8 +59,6 @@ export const authorHandler = author => {
 };
 export const loadTotal = () => {
   return (dispatch, getState) => {
-    const oldState = getState().issues.issues;
-    console.log(oldState);
     $.ajax({
       url: `https://api.github.com/repos/amrithakrishnan/website`,
       dataType: "json",
@@ -87,9 +85,6 @@ export const loadTotal = () => {
 
 export const loadIssuesFromServer = page => {
   return (dispatch, getState) => {
-    const oldState = getState().issues.issues;
-    console.log(oldState);
-
     $.ajax({
       url: `https://api.github.com/repos/amrithakrishnan/website/issues?page=${page}&per_page=${
         getState().issues.per_page
