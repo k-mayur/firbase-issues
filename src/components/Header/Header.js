@@ -14,9 +14,9 @@ class Header extends React.Component {
     auth()
       .signOut()
       .then(res => {
-        console.log(res);
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("isUser");
+        sessionStorage.removeItem("username");
         this.setState({ isSignedIn: false });
       })
       .catch(err => {
@@ -29,6 +29,9 @@ class Header extends React.Component {
     if (this.state.isSignedIn) {
       return (
         <div className={classes.header}>
+          <div className={classes.name}>
+            Signed in as <strong>{sessionStorage.getItem("username")}</strong>
+          </div>
           <Button onClick={this.signOutHandler}>Sign Out</Button>
           <h5>
             freeCodeCamp<span>&nbsp;/&nbsp;</span>

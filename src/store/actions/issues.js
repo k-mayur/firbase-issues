@@ -59,7 +59,7 @@ export const loadTotal = () => {
     const oldState = getState().issues.issues;
     console.log(oldState);
     $.ajax({
-      url: `https://api.github.com/repos/freeCodeCamp/freeCodeCamp`,
+      url: `https://api.github.com/repos/amrithakrishnan/website`,
       dataType: "json",
       type: "GET",
 
@@ -88,7 +88,7 @@ export const loadIssuesFromServer = page => {
     console.log(oldState);
 
     $.ajax({
-      url: `https://api.github.com/repos/freeCodeCamp/freeCodeCamp/issues?page=${page}&per_page=${
+      url: `https://api.github.com/repos/amrithakrishnan/website/issues?page=${page}&per_page=${
         getState().issues.per_page
       }`,
       dataType: "json",

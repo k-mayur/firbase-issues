@@ -37,10 +37,7 @@ class Home extends Component {
 
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("isUser");
-        console.log(
-          sessionStorage.getItem("isUser"),
-          sessionStorage.getItem("token")
-        );
+        sessionStorage.removeItem("username");
       })
       .catch(err => {
         console.error(err.toString());
@@ -52,12 +49,10 @@ class Home extends Component {
     auth()
       .signInWithPopup(provider)
       .then(res => {
+        console.log(res, "here");
         sessionStorage.setItem("token", res.credential.accessToken);
         sessionStorage.setItem("isUser", true);
-        console.log(
-          sessionStorage.getItem("token"),
-          sessionStorage.getItem("isUser")
-        );
+        sessionStorage.setItem("username", res.additionalUserInfo.username);
         this.setState({ isSignedIn: true, token: res.credential.accessToken });
       })
       .catch(err => {
@@ -77,6 +72,9 @@ class Home extends Component {
     if (sessionStorage.getItem("isUser")) {
       homePage = (
         <div className={classes.link}>
+          <div className={classes.name}>
+            Welcome {sessionStorage.getItem("username")}
+          </div>
           <Link to={`/${this.state.page}`}>Issues</Link>
           <div className={classes.button}>
             <Button onClick={this.signOutHandler}>Sign Out</Button>

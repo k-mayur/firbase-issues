@@ -11,3 +11,9 @@ export {
 } from "./issues";
 
 export { loadIssueFromServer, handleChange, deleteLabelHandler } from "./issue";
+
+export {
+  loadCommentsFromServer,
+  addCommentToServer,
+  deleteCommentFromServer
+} from "./comments";

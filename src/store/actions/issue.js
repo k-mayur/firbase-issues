@@ -35,7 +35,7 @@ export const loadIssueFromServer = id => {
     console.log(oldState);
 
     $.ajax({
-      url: `https://api.github.com/repos/freeCodeCamp/freeCodeCamp/issues/${id}`,
+      url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}`,
       dataType: "json",
       type: "GET",
 

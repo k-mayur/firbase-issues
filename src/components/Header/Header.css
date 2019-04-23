@@ -9,6 +9,17 @@
   background-color: red;
   cursor: pointer;
 }
+.name {
+  font-size: 1.2em;
+  color: whitesmoke;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  width: fit-content;
+  text-align: center;
+  background-color: #202020;
+}
 .header h5 {
   color: blue;
   font-weight: 100;

@@ -1,5 +1,8 @@
 export const LOAD_ISSUES = "LOAD_ISSUES";
 export const LOAD_ISSUE = "LOAD_ISSUE";
+export const LOAD_COMMENTS = "LOAD_COMMENTS";
+export const ADD_COMMENT = "ADD_COMMENT";
+export const DELETE_COMMENT = "DELETE_COMMENT";
 export const ERROR = "ERROR";
 export const LOAD_COUNT = "LOAD_COUNT";
 export const SORT = "SORT";
