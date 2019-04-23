@@ -49,7 +49,6 @@ class Home extends Component {
     auth()
       .signInWithPopup(provider)
       .then(res => {
-        console.log(res, "here");
         sessionStorage.setItem("token", res.credential.accessToken);
         sessionStorage.setItem("isUser", true);
         sessionStorage.setItem("username", res.additionalUserInfo.username);

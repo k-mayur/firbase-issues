@@ -12,8 +12,8 @@ import { Redirect, withRouter } from "react-router-dom";
 class IssuesGit extends Component {
   componentDidMount() {
     if (sessionStorage.getItem("isUser")) {
-      this.props.loadIssues(this.props.match.params.page);
-      this.props.loadTotal();
+      this.props.loadingOn();
+      this.loadIssuesHandler(this.props.match.params.page);
       this.props.history.push(`/${this.props.match.params.page}`);
     } else {
       return <Redirect to="/" />;
@@ -23,6 +23,11 @@ class IssuesGit extends Component {
   handlePageClick = data => {
     this.props.loadIssues(data.selected + 1);
     this.props.history.push(`/${data.selected + 1}`);
+  };
+
+  loadIssuesHandler = page => {
+    this.props.loadIssues(page);
+    this.props.loadTotal();
   };
 
   render() {
@@ -129,7 +134,8 @@ const mapDispatchToProps = dispatch => {
     labelHandler: label => dispatch(actionCreators.labelHandler(label)),
     authorHandler: author => dispatch(actionCreators.authorHandler(author)),
     searchHandler: (e, value) =>
-      dispatch(actionCreators.searchHandler(e, value))
+      dispatch(actionCreators.searchHandler(e, value)),
+    loadingOn: () => dispatch(actionCreators.loadingOn())
   };
 };
 

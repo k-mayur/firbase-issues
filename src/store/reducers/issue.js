@@ -4,7 +4,8 @@ import { updateObject } from "../utility";
 const initialState = {
   issue: {},
   err: null,
-  checked: true
+  checked: true,
+  loading: false
 };
 
 const changeStatus = (check, state) => {

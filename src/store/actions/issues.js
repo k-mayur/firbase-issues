@@ -1,6 +1,9 @@
 import * as actionTypes from "./actionTypes";
 import $ from "jquery";
 
+export const loadingOn = () => {
+  return { type: actionTypes.LOADING };
+};
 export const loadIssues = data => {
   return {
     type: actionTypes.LOAD_ISSUES,

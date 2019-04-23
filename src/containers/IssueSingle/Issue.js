@@ -15,11 +15,16 @@ import * as actionCreators from "../../store/actions/index";
 class Issue extends Component {
   componentDidMount() {
     if (sessionStorage.getItem("isUser")) {
-      this.props.loadIssue(this.props.match.params.issueId);
+      this.props.loadingOn();
+      this.loadIssueHandler(this.props.match.params.issueId);
     } else {
       return <Redirect to="/" />;
     }
   }
+
+  loadIssueHandler = id => {
+    this.props.loadIssue(id);
+  };
 
   render() {
     if (sessionStorage.getItem("isUser")) {
@@ -130,7 +135,7 @@ class Issue extends Component {
 const mapStateToProps = state => {
   return {
     issue: state.issue.issue,
-    loading: state.issues.loading,
+    loading: state.issue.loading,
     err: state.issue.err,
     checked: state.issue.checked,
     total: state.issues.total
@@ -141,7 +146,8 @@ const mapDispatchToProps = dispatch => {
     loadIssue: id => dispatch(actionCreators.loadIssueFromServer(id)),
     handleChange: check => dispatch(actionCreators.handleChange(check)),
     deleteLabelHandler: name =>
-      dispatch(actionCreators.deleteLabelHandler(name))
+      dispatch(actionCreators.deleteLabelHandler(name)),
+    loadingOn: () => dispatch(actionCreators.loadingOn())
   };
 };
 

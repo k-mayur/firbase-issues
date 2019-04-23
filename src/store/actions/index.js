@@ -7,7 +7,8 @@ export {
   stateHandler,
   labelHandler,
   authorHandler,
-  searchHandler
+  searchHandler,
+  loadingOn
 } from "./issues";
 
 export { loadIssueFromServer, handleChange, deleteLabelHandler } from "./issue";

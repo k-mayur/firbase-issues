@@ -7,9 +7,14 @@ import Button from "@material-ui/core/Button";
 import * as actionCreators from "../../store/actions/index";
 
 class Comments extends Component {
-  componentDidMount() {
-    this.props.loadCommentsFromServer(this.props.number);
-  }
+  componentDidMount = () => {
+    this.props.loadingOn();
+    this.loadCommentsHandler(this.props.number);
+  };
+
+  loadCommentsHandler = id => {
+    this.props.loadCommentsFromServer(id);
+  };
 
   deleteCommentHandler = id => {
     this.props.deleteCommentFromServer(id);
@@ -119,7 +124,8 @@ const mapDispatchToProps = dispatch => {
     addCommentToServer: (value, id) =>
       dispatch(actionCreators.addCommentToServer(value, id)),
     deleteCommentFromServer: id =>
-      dispatch(actionCreators.deleteCommentFromServer(id))
+      dispatch(actionCreators.deleteCommentFromServer(id)),
+    loadingOn: () => dispatch(actionCreators.loadingOn())
   };
 };
 

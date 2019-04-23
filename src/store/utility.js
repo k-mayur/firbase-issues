@@ -1,6 +1,7 @@
 export const updateObject = (oldObject, updatedValues) => {
   return {
     ...oldObject,
-    ...updatedValues
+    ...updatedValues,
+    loading: false
   };
 };

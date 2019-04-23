@@ -13,3 +13,4 @@ export const AUTHOR = "AUTHOR";
 export const SEARCH = "SEARCH";
 export const CHECK = "CHECK";
 export const LABEL_DELETE = "LABEL_DELETE";
+export const LOADING = "LOADING";
