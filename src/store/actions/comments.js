@@ -32,7 +32,9 @@ export const deleteComment = id => {
 export const addCommentToServer = (val, id) => {
   return (dispatch, getState) => {
     $.ajax({
-      url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}/comments`,
+      url: `https://api.github.com/repos/${sessionStorage.getItem(
+        "repo"
+      )}/issues/${id}/comments`,
       data: JSON.stringify({ body: val }),
       dataType: "json",
       type: "POST",
@@ -59,7 +61,9 @@ export const addCommentToServer = (val, id) => {
 export const deleteCommentFromServer = id => {
   return (dispatch, getState) => {
     $.ajax({
-      url: `https://api.github.com/repos/amrithakrishnan/website/issues/comments/${id}`,
+      url: `https://api.github.com/repos/${sessionStorage.getItem(
+        "repo"
+      )}/issues/comments/${id}`,
       type: "DELETE",
 
       success: data => {
@@ -84,7 +88,9 @@ export const deleteCommentFromServer = id => {
 export const loadCommentsFromServer = id => {
   return (dispatch, getState) => {
     $.ajax({
-      url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}/comments`,
+      url: `https://api.github.com/repos/${sessionStorage.getItem(
+        "repo"
+      )}/issues/${id}/comments`,
       dataType: "json",
       type: "GET",
 

@@ -32,7 +32,9 @@ export const errorPage = err => {
 export const loadIssueFromServer = id => {
   return (dispatch, getState) => {
     $.ajax({
-      url: `https://api.github.com/repos/amrithakrishnan/website/issues/${id}`,
+      url: `https://api.github.com/repos/${sessionStorage.getItem(
+        "repo"
+      )}/issues/${id}`,
       dataType: "json",
       type: "GET",
 

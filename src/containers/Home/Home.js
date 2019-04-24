@@ -38,6 +38,7 @@ class Home extends Component {
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("isUser");
         sessionStorage.removeItem("username");
+        sessionStorage.removeItem("repo");
       })
       .catch(err => {
         console.error(err.toString());
@@ -52,6 +53,7 @@ class Home extends Component {
         sessionStorage.setItem("token", res.credential.accessToken);
         sessionStorage.setItem("isUser", true);
         sessionStorage.setItem("username", res.additionalUserInfo.username);
+        sessionStorage.setItem("repo", "freeCodeCamp/freeCodeCamp");
         this.setState({ isSignedIn: true });
       })
       .catch(err => {

@@ -13,14 +13,14 @@ import { Redirect } from "react-router-dom";
 import * as actionCreators from "../../store/actions/index";
 
 class Issue extends Component {
-  componentDidMount() {
+  componentDidMount = () => {
     if (sessionStorage.getItem("isUser")) {
       this.props.loadingOn();
       this.loadIssueHandler(this.props.match.params.issueId);
     } else {
       return <Redirect to="/" />;
     }
-  }
+  };
 
   loadIssueHandler = id => {
     this.props.loadIssue(id);

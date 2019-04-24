@@ -10,7 +10,7 @@ import * as actionCreators from "../../store/actions/index";
 import { Redirect, withRouter } from "react-router-dom";
 
 class IssuesGit extends Component {
-  componentDidMount() {
+  componentDidMount = () => {
     if (sessionStorage.getItem("isUser")) {
       this.props.loadingOn();
       this.loadIssuesHandler(this.props.match.params.page);
@@ -18,10 +18,11 @@ class IssuesGit extends Component {
     } else {
       return <Redirect to="/" />;
     }
-  }
+  };
 
   handlePageClick = data => {
-    this.props.loadIssues(data.selected + 1);
+    this.props.loadingOn();
+    this.loadIssuesHandler(data.selected + 1);
     this.props.history.push(`/${data.selected + 1}`);
   };
 

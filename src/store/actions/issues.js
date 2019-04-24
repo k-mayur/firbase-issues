@@ -60,7 +60,7 @@ export const authorHandler = author => {
 export const loadTotal = () => {
   return (dispatch, getState) => {
     $.ajax({
-      url: `https://api.github.com/repos/amrithakrishnan/website`,
+      url: `https://api.github.com/repos/${sessionStorage.getItem("repo")}`,
       dataType: "json",
       type: "GET",
 
@@ -86,9 +86,9 @@ export const loadTotal = () => {
 export const loadIssuesFromServer = page => {
   return (dispatch, getState) => {
     $.ajax({
-      url: `https://api.github.com/repos/amrithakrishnan/website/issues?page=${page}&per_page=${
-        getState().issues.per_page
-      }`,
+      url: `https://api.github.com/repos/${sessionStorage.getItem(
+        "repo"
+      )}/issues?page=${page}&per_page=${getState().issues.per_page}`,
       dataType: "json",
       type: "GET",
 

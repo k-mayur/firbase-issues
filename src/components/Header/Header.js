@@ -17,6 +17,7 @@ class Header extends React.Component {
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("isUser");
         sessionStorage.removeItem("username");
+        sessionStorage.removeItem("repo");
         this.setState({ isSignedIn: false });
       })
       .catch(err => {
