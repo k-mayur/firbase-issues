@@ -88,11 +88,11 @@ const searchHandle = (payload, state) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.LOADING:
-      return updateObject(state, { loading: true });
+      return { ...state, loading: true };
     case actionTypes.LOAD_ISSUES:
       return updateObject(state, { issues: action.data });
     case actionTypes.LOAD_COUNT:
-      return updateObject(state, { total: action.total });
+      return { ...state, total: action.total };
     case actionTypes.SORT:
       return sortHandle(action.payload, state);
     case actionTypes.STATE:
