@@ -53,7 +53,7 @@ class Home extends Component {
         sessionStorage.setItem("token", res.credential.accessToken);
         sessionStorage.setItem("isUser", true);
         sessionStorage.setItem("username", res.additionalUserInfo.username);
-        sessionStorage.setItem("repo", "freeCodeCamp/freeCodeCamp");
+        sessionStorage.setItem("repo", "amrithakrishnan/website");
         this.setState({ isSignedIn: true });
       })
       .catch(err => {
